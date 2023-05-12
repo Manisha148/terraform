@@ -59,19 +59,19 @@ resource "aws_codepipeline" "this" {
   #   }
   # }
 
-  # stage {
-  #   name = "Deploy"
-  #   action {
-  #     name            = "Deploy"
-  #     category        = "Build"
-  #     provider        = "CodeBuild"
-  #     version         = "1"
-  #     owner           = "AWS"
-  #     input_artifacts = [var.input_artifacts]
-  #     configuration = {
-  #       ProjectName = var.project_name
-  #     }
-  #   }
-  # }
+  stage {
+    name = "Deploy"
+    action {
+      name            = "Deploy"
+      category        = "Build"
+      provider        = "CodeBuild"
+      version         = "1"
+      owner           = "AWS"
+      input_artifacts = [var.input_artifacts]
+      configuration = {
+        ProjectName = var.project_name
+      }
+    }
+  }
 
 }
